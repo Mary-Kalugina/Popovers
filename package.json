@@ -46,7 +46,8 @@
   "dependencies": {
     "-": "^0.0.1",
     "glob-parent": "^6.0.2",
-    "puppeteer": "^20.1.1",
+    "jest-puppeteer": "^8.0.6",
+    "puppeteer": "^20.1.2",
     "push-dir": "^0.4.1",
     "y": "^0.3.2"
   }

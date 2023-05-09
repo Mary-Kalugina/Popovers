@@ -21,7 +21,7 @@ describe('Card input form', () => {
       });
 
       browser = await puppeteer.launch({
-        headless: true,
+        headless: false,
         slowMo: 500,
         devtools: true,
       });
@@ -42,32 +42,14 @@ describe('Card input form', () => {
     expect(popover).toBeTruthy();
   });
 
-  // test('should hide popover when button is clicked again', async () => {
-  //   const button = await page.$('.button');
-  //   const popover = await page.$('.popover');
-    
-  //   await button.click();
-  //   await page.waitForSelector('.popover');
-  //   expect(popover).toBeTruthy();
-  
-  //   await button.click();
-  //   await page.waitForSelector('.popover', { hidden: true });
-  //   expect(popover).toBeFalsy();
-  // });
-
   test('should hide popover when button is clicked again', async () => {
     const button = await page.$('.button');
+
+    expect(await page.$eval(".popover", (e) => (e ? true : false))).toBe(true);
+    // const popover = await page.$('.popover');
+    
     await button.click();
-    await page.waitForSelector('.popover');
-  
-    const isPopoverVisible = await page.$eval('.popover', (el) => !el.hidden);
-    expect(isPopoverVisible).toBeTruthy();
-  
-    await button.click();
-    await page.waitForTimeout(1000); // Wait for 1 second
-  
-    const isPopoverHidden = await page.$eval('.popover', (el) => el.hidden);
-    expect(isPopoverHidden).toBeTruthy();
-  });
-  
+    await page.waitForTimeout(1000);
+   expect(await page.$(".popover")).toBe(null);
+  });  
 });

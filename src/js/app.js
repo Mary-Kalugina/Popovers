@@ -1,8 +1,8 @@
 const button = document.querySelector(".button");
 
-button.addEventListener("click", onClick);
+button.addEventListener("click", (event) => onClick(event));
 
-function onClick() {
+function onClick(event) {
   if (document.querySelector(".popover")) {
     document.querySelector(".popover").remove();
     return;
@@ -15,5 +15,8 @@ function onClick() {
   popoverText.classList.add("popoverText");
   popoverText.textContent = "This is the text of popover. Cool, yeah?!";
   popover.appendChild(popoverText);
+  const buttonRect = event.target.getBoundingClientRect();
+  popover.style.top = buttonRect.top + buttonRect.height - 130 + "px";
+  popover.style.left = buttonRect.left + "px";
   container.appendChild(popover);
 }

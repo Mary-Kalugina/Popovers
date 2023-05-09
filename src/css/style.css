@@ -15,8 +15,6 @@
 .popover {
     width: 250px;
     height: 60px;
-    top: 30px;
-    right: 130px;
     background-color: rgb(214, 214, 214);
     color: black;
     font-weight: bold;
@@ -29,7 +27,7 @@
 .popover::after {
     content: "";
     position: absolute;
-    top: 104%;
+    top: 103%;
     left: 50%;
     margin-left: -10px;
     border-width: 10px;
@@ -45,7 +43,7 @@
     top: 104%;
     left: 50%;
     margin-left: -10px;
-    border-width: 11px;
+    border-width: 10px;
     border-style: solid;
     border-color: transparent transparent grey transparent;
 
