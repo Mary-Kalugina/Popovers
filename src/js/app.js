@@ -1,12 +1,19 @@
-// TODO: write code here
+const button = document.querySelector(".button");
 
-// comment this to pass build
-//eslint-disable-next-line
-const unusedVariable = "variable";
+button.addEventListener("click", onClick);
 
-// for demonstration purpose only
-export default function demo(value) {
-  return `Demo: ${value}`;
+function onClick() {
+  if (document.querySelector(".popover")) {
+    document.querySelector(".popover").remove();
+    return;
+  }
+  const popover = document.createElement("div");
+  const container = document.querySelector(".container");
+  popover.classList.add("popover");
+  popover.textContent = "Popover title";
+  const popoverText = document.createElement("div");
+  popoverText.classList.add("popoverText");
+  popoverText.textContent = "This is the text of popover. Cool, yeah?!";
+  popover.appendChild(popoverText);
+  container.appendChild(popover);
 }
-
-console.log("app.js included");

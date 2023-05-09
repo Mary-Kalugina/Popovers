@@ -16,7 +16,8 @@
     "preshow:coverage": "npm run coverage",
     "show:coverage": "live-server coverage/lcov-report",
     "preshow:dist": "npm run build",
-    "show:dist": "live-server dist"
+    "show:dist": "live-server dist",
+    "e2e": "jest --testPathPattern=./e2e/ --runInBand"
   },
   "author": "coursar",
   "license": "MIT",
@@ -37,7 +38,7 @@
     "live-server": "^1.1.0",
     "mini-css-extract-plugin": "^2.7.5",
     "prettier": "^2.8.7",
-    "webpack": "^5.75.0",
+    "webpack": "^5.82.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.2",
     "webpack-merge": "^5.8.0"
@@ -45,6 +46,7 @@
   "dependencies": {
     "-": "^0.0.1",
     "glob-parent": "^6.0.2",
+    "puppeteer": "^20.1.1",
     "push-dir": "^0.4.1",
     "y": "^0.3.2"
   }

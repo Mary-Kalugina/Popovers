@@ -1,3 +1,63 @@
-body {
-    color: #999;
+.container {
+    position: relative;
+}
+
+.button {
+    background-color: brown;
+    color: beige;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 100px;
+    width: 240px;
+    height: 50px;
+}
+
+.popover {
+    width: 250px;
+    height: 60px;
+    top: 30px;
+    right: 130px;
+    background-color: rgb(214, 214, 214);
+    color: black;
+    font-weight: bold;
+    position: fixed;
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding-top: 2px;
+}
+
+.popover::after {
+    content: "";
+    position: absolute;
+    top: 104%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent rgb(255, 248, 248) transparent;
+
+    transform: rotate(180deg);
+}
+
+.popover::before {
+    content: "";
+    position: absolute;
+    top: 104%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 11px;
+    border-style: solid;
+    border-color: transparent transparent grey transparent;
+
+    transform: rotate(180deg);
+}
+
+.popoverText {
+    background-color: rgb(255, 248, 248);
+    padding: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    font-weight: lighter;   
 }
