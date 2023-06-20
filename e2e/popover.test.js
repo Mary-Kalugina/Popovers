@@ -21,9 +21,9 @@ describe('Card input form', () => {
       });
 
       browser = await puppeteer.launch({
-        headless: false,
-        slowMo: 500,
-        devtools: true,
+        // headless: false,
+        // slowMo: 500,
+        // devtools: true,
       });
       page = await browser.newPage();
       await page.goto(baseUrl);
