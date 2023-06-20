@@ -46,7 +46,6 @@ describe('Card input form', () => {
     const button = await page.$('.button');
 
     expect(await page.$eval(".popover", (e) => (e ? true : false))).toBe(true);
-    // const popover = await page.$('.popover');
     
     await button.click();
     await page.waitForTimeout(1000);
